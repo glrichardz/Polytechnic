@@ -1,0 +1,17 @@
+$TTL 3h
+
+5.16.172.in-addr.arpa. IN SOA ns1.foo.org.nz. richgl1.student.op.ac.nz. (
+ 
+ 20150910 ; serial number
+ 3h       ; slave refresh
+ 1h       ; slave retry
+ 3d       ; slave expires
+ 1h )     ; negative ttl
+ 
+5.16.172.in-addr.arpa. IN NS ns1.foo.org.nz.
+5.16.172.in-addr.arpa. IN NS ns2.foo.org.nz.
+
+10.5.16.172.in-addr.arpa. IN PTR ns1.foo.org.nz.
+2.5.16.172.in-addr.arpa. IN PTR router1.foo.org.nz.
+3.5.16.172.in-addr.arpa. IN PTR router2.foo.org.nz.
+30.5.16.172.in-addr.arpa. IN PTR linux-client.foo.org.nz.

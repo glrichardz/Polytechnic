@@ -1,0 +1,31 @@
+$TTL 1h
+
+foo.org.nz. IN SOA ns1.foo.org.nz. richgl1.student.op.ac.nz. (
+
+20150819 ; serial number
+3h       ; slave refresh
+1h       ; slave retry
+3d       ; slave expires
+1h )     ; negative ttl
+
+foo.org.nz. IN NS ns1.foo.org.nz.
+foo.org.nz. IN NS ns2.foo.org.nz.
+
+ns1.foo.org.nz. IN A 172.16.5.10
+ns2.foo.org.nz. IN A 172.16.5.10
+
+bsd-server.foo.org.nz. IN A 172.16.5.10
+bsd-relay-server.foo.org.nz. IN A 192.168.2.101
+linux-client.foo.org.nz. IN A 172.16.5.30
+router1.foo.org.nz. IN A 10.25.1.202
+router1.foo.org.nz. IN A 172.16.5.2
+router2.foo.org.nz. IN A 172.16.5.3
+router2.foo.org.nz. IN A 192.168.2.2
+
+foo.org.nz. IN MX 10 bsd-server.foo.org.nz.
+foo.org.nz. IN MX 20 bsd-relay-server.foo.org.nz. 
+
+www.foo.org.nz. IN CNAME bsd-server.foo.org.nz. 
+
+
+
