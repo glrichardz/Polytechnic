@@ -1,0 +1,15 @@
+[Unit]
+Description=Data_Container
+After=docker.service
+Requires=docker.service
+
+[Service]
+TimeoutStartSec=0
+ExecStartPre=-/usr/bin/docker kill data_container1
+ExecStartPre=-/usr/bin/docker rm data_container1
+ExecStartPre=/usr/bin/docker pull richgl1/virtualisation_assn1_data_containerr
+ExecStart=/usr/bin/docker run --rm --name data_container1 richgl1/virtualisation_assn1_data_containerr
+ExecStop=/usr/bin/docker stop data_container1
+
+[X-Fleet]
+Conflicts=data_container@*.service

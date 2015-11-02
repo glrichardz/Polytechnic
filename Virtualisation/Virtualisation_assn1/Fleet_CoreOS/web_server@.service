@@ -1,0 +1,17 @@
+[Unit]
+Description=Apache Web Server
+After=docker.service
+Requires=docker.service
+After=data_container@%i.service
+
+[Service]
+TimeoutStartSec=0
+ExecStartPre=-/usr/bin/docker kill web-server1
+ExecStartPre=-/usr/bin/docker rm web-server1
+ExecStartPre=/usr/bin/docker pull richgl1/virtualisation_assn1_web_server
+ExecStart=/usr/bin/docker run --volumes-from data_container1 -p 80:80 --rm --name web-server1 richgl1/virtualisation_assn1_web_server
+ExecStop=/usr/bin/docker stop web-server1
+
+[X-Fleet]
+Conflicts=web_server@*.service
+X-ConditionMachineOf=data_container@%i.service
