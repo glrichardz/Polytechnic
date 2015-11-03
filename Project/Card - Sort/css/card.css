@@ -1,0 +1,11 @@
+
+ 
+.outline{ width: 215px; height: 315px ; border: 1px solid black; text-align: center; padding: 10px; margin: 10px; background: #FFF; }
+.top{ text-align: left; margin-bottom: 7px; text-color:black; height: 160px;}
+.bottom{ text-align: center;}
+ 
+.shadow{ box-shadow: 3px 3px 9px #000; -moz-box-shadow: 3px 3px 9px #000; -webkit-box-shadow: 3px 3px 9px #000; }
+.rounded{ border-radius:10px; -moz-border-radius:10px; -webkit-border-radius:10px; }
+
+.one { float: left; }
+
